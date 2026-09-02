@@ -22,4 +22,13 @@ def predict_heatwave(temperature, humidity, wind_speed, solar_radiation):
     probability = float(model.predict_proba(row)[0][1])
     risk = "HIGH" if probability >= 0.70 else "MODERATE" if probability >= 0.40 else "LOW"
 
-    return {"probability": round(probability, 4), "risk": risk}
+    return {"probability": round(probability, 4), "risk": risk} 
+
+if __name__ == "__main__":
+    result = predict_heatwave(
+        temperature=42,
+        humidity=55,
+        wind_speed=8,
+        solar_radiation=850
+    )
+    print("Prediction:", result)
