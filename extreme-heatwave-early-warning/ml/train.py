@@ -5,12 +5,12 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 
-DATA = Path("data/demo_weather.csv")
+DATA = Path("data/raw/heatwave_weather_demo.csv")
 MODEL = Path("ml/model/heatwave_model.pkl")
 
 if not DATA.exists():
     raise FileNotFoundError(
-        "data/demo_weather.csv not found. Run: python ml/generate_demo_data.py"
+        "heatwave_weather_demo.csv not found. Run: python ml/generate_demo_data.py"
     )
 
 df = pd.read_csv(DATA)
